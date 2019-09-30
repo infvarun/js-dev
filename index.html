@@ -55,8 +55,12 @@
         if(op === '*') {
           var result = parseInt(inp1) * parseInt(inp2);
         }
-         
+        
+        //display result on console
         console.log('result: '+result);
+
+        //now assign value of result to readonly reult input box
+        document.getElementById('result').value = result;
       }
       
 
