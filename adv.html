@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Calculator Example</title>
+  </head>
+  <body>
+
+  <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+      <a class="navbar-brand" href="#">Calculator</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Basic</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="adv.html">Advance <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="display-4">Advance Calculator</h1>
+
+      <div class="card w-75">
+        <div class="card-body">
+            <form>
+                <input type="text" class="form-control" style="background-color: black; color:chartreuse; font-size: 30px" id="input1">
+                <table class="table table-sm table-bordered" id="calc" style="text-align: center">
+                    <tbody>
+                      <tr>
+                        <td><input style="width: 100%" class="btn btn-sm btn-primary" type="button" value="1"></td>
+                        <td><input style="width: 100%" class="btn btn-sm btn-primary" type="button" value="2"></td>
+                        <td><input style="width: 100%" class="btn btn-sm btn-primary" type="button" value="3"></td>
+                        <td>
+                          <input style="width: 45%" class="btn btn-sm btn-warning" type="button" value="+">
+                          <input style="width: 45%" class="btn btn-sm btn-warning" type="button" value="-">
+                        </td>
+                      </tr>
+                      <tr>
+                          <td><input style="width: 100%" class="btn btn-sm btn-primary" type="button" value="4"></td>
+                          <td><input style="width: 100%" class="btn btn-sm btn-primary" type="button" value="5"></td>
+                          <td><input style="width: 100%" class="btn btn-sm btn-primary" type="button" value="6"></td>
+                          <td>
+                              <input style="width: 45%" class="btn btn-sm btn-warning" type="button" value="(">
+                              <input style="width: 45%" class="btn btn-sm btn-warning" type="button" value=")">
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><input style="width: 100%" class="btn btn-sm btn-primary" type="button" value="7"></td>
+                          <td><input style="width: 100%" class="btn btn-sm btn-primary" type="button" value="8"></td>
+                          <td><input style="width: 100%" class="btn btn-sm btn-primary" type="button" value="9"></td>
+                          <td>
+                            <input style="width: 45%" class="btn btn-sm btn-warning" type="button" value="*">
+                            <input style="width: 45%" class="btn btn-sm btn-warning" type="button" value="/">
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><input style="width: 100%" class="btn btn-sm btn-primary" type="button" value="0"></td>
+                          <td><input style="width: 100%" class="btn btn-sm btn-warning" type="button" value="."></td>
+                          <td>
+                            <input style="width: 100%" class="btn btn-sm btn-warning" type="button" value="cls">
+                          </td>
+                          <td><input style="width: 90%" class="btn btn-sm btn-success" type="button" value="="></td>
+                        </tr>
+                    </tbody>
+                  </table>
+            </form>
+        </div>
+      </div>
+
+      
+    </div>
+
+
+    <script>
+      document.getElementById('calc').addEventListener("click", function(event){
+        console.log(event.srcElement.value);
+        var x = event.srcElement.value;
+        if(x === 'cls') {
+          document.getElementById('input1').value = '';
+          return;
+        }
+        if(x === '=') {
+          var exp = document.getElementById('input1').value;
+          var res = eval(document.getElementById('input1').value);
+          document.getElementById('input1').value = exp + ' = ' + res;
+          return;
+        }
+        if(x === ''){
+
+        } else {
+          document.getElementById('input1').value += event.srcElement.value;
+        }
+        
+      });
+      
+
+      //document.getElementById('input1');
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
