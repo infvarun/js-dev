@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>JS Examples</title>
+  </head>
+  <body>
+
+  <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+      <a class="navbar-brand" href="#">Mini Projects</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Basic Calc</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="adv.html">Advance Calc</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="conditions.html">Conditions <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="display-4">Condition - Building Decision tree</h1>
+      <div class="card w-75">
+        <div class="card-body">
+          <input type="text" class="form-control" style="background-color: black; color:chartreuse; font-size: 30px" id="result" readonly value="Result">
+          <h4 class="text-primary">Truth Table</h4>
+          <table class="table table-sm table-bordered" id="truthtable">
+            <thead>
+              <tr>
+                <th scope="col">Input</th>
+                <th scope="col">Input</th>
+                <th scope="col">Logical Operator - &&(AND) ||(OR)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                  <input class="btn btn-sm btn-warning" type="button" value="&&" />
+                  <input class="btn btn-sm btn-warning" type="button" value="||" />
+                </td>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>
+                  <input class="btn btn-sm btn-warning" type="button" value="&&" />
+                  <input class="btn btn-sm btn-warning" type="button" value="||" />
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>
+                  <input class="btn btn-sm btn-warning" type="button" value="&&" />
+                  <input class="btn btn-sm btn-warning" type="button" value="||" />
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>
+                  <input class="btn btn-sm btn-warning" type="button" value="&&" />
+                  <input class="btn btn-sm btn-warning" type="button" value="||" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr>
+          <h4 class="text-primary"> Switch example : Feed Me - 😄</h4>
+          <ul class="list-group list-group-horizontal" id="food">
+            <li class="list-group-item">
+              <input class="btn btn-sm btn-success" type="button" value="Pizza" />
+            </li>
+            <li class="list-group-item">
+              <input class="btn btn-sm btn-warning" type="button" value="Ice-Cream" />
+            </li>
+            <li class="list-group-item">
+              <input class="btn btn-sm btn-info" type="button" value="Coffee" />
+            </li>
+            <li class="list-group-item">
+              <input class="btn btn-sm btn-warning" type="button" value="Burger" />
+            </li>
+            <li class="list-group-item">
+              <input class="btn btn-sm btn-danger" type="button" value="Apple" />
+            </li>
+            <li class="list-group-item">
+              <input class="btn btn-sm btn-warning" type="button" value="Banana" />
+            </li>
+            <li class="list-group-item">
+              <input class="btn btn-sm btn-primary" type="button" value="Carrot" />
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+      
+    </div>
+   
+    <script>
+        document.getElementById('truthtable').addEventListener('click', function(event) {
+          // get value of button
+          let x = event.srcElement.value;
+          console.log(x);
+          // get column 1 value of corresponding row
+          let inp1 = parseInt(event.srcElement.parentNode.parentNode.children[0].textContent);
+          // get column 2 value of corresponding row
+          let inp2 = parseInt(event.srcElement.parentNode.parentNode.children[1].textContent);
+
+          if(x === '&&')
+            document.getElementById('result').value =  (inp1 && inp2);
+
+          if(x === '||')
+            document.getElementById('result').value =  (inp1 || inp2);
+
+        });
+
+        /*
+        * Code for switch case
+        */
+       const food = {
+         'Pizza' : '🍕',
+         'Ice-Cream' : '🍧',
+         'Coffee' : '☕',
+         'Burger' : '🍔',
+         'Apple' : '🍎',
+         'Banana' : '🍌',
+         'Carrot' : '🥕',
+         'None' : '😒'
+       }
+        
+        document.getElementById('food').addEventListener('click', function(event) {
+          let fooditem = event.srcElement.value;
+          var item;
+          switch(fooditem) {
+
+            case 'Pizza' : 
+              item = food[fooditem];
+              break;
+            
+            case 'Ice-Cream' : 
+              item = food[fooditem];
+              break;
+
+            case 'Coffee' : 
+              item = food[fooditem];
+              break;
+
+            case 'Burger' : 
+              item = food[fooditem];
+              break;
+
+            case 'Apple' : 
+              item = food[fooditem];
+              break;
+
+            case 'Banana' : 
+              item = food[fooditem];
+              break;
+
+            case 'Carrot' : 
+              item = food[fooditem];
+              break;
+            default :
+              item = food['None'] + ' No food selected'
+          }
+
+          document.getElementById('result').value = item;
+          
+        });
+
+      //document.getElementById('input1');
+    </script>
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+  </body>
+</html>
