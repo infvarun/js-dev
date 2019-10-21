@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6 JS Examples</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+<body>
+    <!-- Navbar for our app -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Mini Projects</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href=".../index.html">Basic Calc</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../adv.html">Advance Calc</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../conditions.html">Conditionss</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="course.html">ES6 Example <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                Varun Ved
+            </span>
+        </div>
+    </nav>
+    <div class="container">
+        <!-- Content here -->
+        <h1 class="text-primary">Course Enrollment Form</h1>
+        <hr/>
+        <form action="formhandler.html" method="GET">
+            <div class="form-group">
+                <h5><label for="fname">First name</label></h5>
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name">
+            </div>
+            <div class="form-group">
+                <h5><label for="lname">Last name</label></h5>
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name">
+            </div>
+            <div class="form-group">
+                <h5><label for="lname">Email</label></h5>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+            </div>
+
+            <h5> Gender </h5>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="M" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    Male
+                </label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="F">
+                <label class="form-check-label" for="exampleRadios2">
+                    Female
+                </label>
+            </div>
+
+            <h5> Courses </h5>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="course" id="examplecheck1" value="JavaScript" checked>
+                <label class="form-check-label" for="examplecheck1">
+                    JavaScript
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="course" id="examplecheck2" value="HTML5">
+                <label class="form-check-label" for="examplecheck2">
+                    HTML5
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="course" id="examplecheck3" value="Node JS">
+                <label class="form-check-label" for="examplecheck3">
+                    Node JS
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="course" id="examplecheck4" value="PHP">
+                <label class="form-check-label" for="examplecheck4">
+                    PHP
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="course" id="examplecheck5" value="Angular">
+                <label class="form-check-label" for="examplecheck5">
+                    Angular
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <h5><label for="country">Country</label></h5>
+                <select class="form-control" id="country" name="country">
+                    <option value="India">India</option>
+                    <option value="United states">United states</option>
+                    <option value="Canada">Canada</option>
+                </select>
+            </div>
+            
+            <input type="submit" class="btn btn-primary" name="submit" id="submit" value="Sign Up!">
+        </form>
+    
+        <footer>
+            <hr/>
+            <p>Copyright 2019-2020 Varun Ved</p>
+        </footer>
+    </div>
+</body>
+</html>

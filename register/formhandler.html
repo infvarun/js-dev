@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Advance JS Example</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script>
+        // First get all parameters and populate in object
+        let params = document.location.href.split('?')[1].split('&');
+        paramobj = {};
+        let course = [];
+        params.forEach((value, index, array)=>{
+            if(value.split('=')[0] === 'course') {
+                course.push(decodeURIComponent(value.split('=')[1]));
+            } else {
+                paramobj[value.split('=')[0]] = decodeURIComponent(value.split('=')[1]);
+            }
+        });
+        paramobj['course'] = course;
+
+    </script>
+
+</head>
+<body>
+    <!-- Navbar for our app -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Mini Projects</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href=".../index.html">Basic Calc</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../adv.html">Advance Calc</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../conditions.html">Conditionss</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="course.html">ES6 Example <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                Varun Ved
+            </span>
+        </div>
+    </nav>
+    <div class="container">
+        <!-- Content here -->
+        <h1 class="text-primary">Enrollment Confirmation!</h1>
+        <hr/>
+        <div class="row">
+            <div class="card col-3">
+                <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201811/online-3412473_1920_1.jpeg?tz.RfsTe_UTLHiDqxmpG7PY_nTIBjwF7" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" id='name'></h5>
+                    <p class="card-text" id="intro">
+                            Welcome to the course, you are now enrolled for-
+                        <ul class="list-group list-group-flush" id="course"></ul>
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush" id="detail">
+                    
+                </ul>
+                <div class="card-body">
+                    <a href="course.html" class="card-link">Goto Enrollment form</a>
+                </div>
+            </div>
+
+            <div class="col-9">
+                <div class="jumbotron">
+                    <h1 class="display-4" id="helloname"></h1>
+                    <p class="lead">This is an example of JavaScript ES6, In this project ES6 features are used such as 
+                        <ul>
+                            <li>String Literals - String literals in JS are written using tilda symbol instead of quotes`` anything inside tilde will be rendered as it is, we can write multi-line string as well.</li>
+                            <li>String Template - String templates can be written as ${variables}</li>
+                            <li>let - let is substitute for var, but let has block scope but var has function scope.</li>
+                            <li>const - const is substitute for var, with block scope, also const is constant and once assigned cannot be reassigned.</li>
+                            <li>forEach - Used to iterate through collection such as array</li>
+                        </ul>
+                    </p>
+                    <hr class="my-4">
+                    <p>Read more about ES6 with examples and explanation in detail. I am collating all the details for quick reference and interview preparations. Please stay tuned.</p>
+                    <a class="btn btn-primary btn-lg" href="https://thezeroone.co" role="button">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // now push that into URL
+        //<li class="list-group-item">Cras justo odio</li>
+        document.getElementById('name').innerHTML = `${paramobj.fname} ${paramobj.lname}`;
+
+        paramobj.course.forEach((value, index, array) => {
+            var li = document.createElement("li");                 // Create a <li> node
+            var textnode = document.createTextNode(value);         // Create a text node
+            li.appendChild(textnode);                              //add textNode to li
+            document.getElementById('course').appendChild(li);
+        });
+
+        document.getElementById('detail').innerHTML = `
+            <li class="list-group-item">Email: ${paramobj.email}</li>
+            <li class="list-group-item">Gender: ${paramobj.gender}</li>
+            <li class="list-group-item">Country: ${paramobj.country}</li>
+        `;
+
+        document.getElementById('helloname').innerHTML = `Hello, ${paramobj.fname}`;
+
+
+    </script>
+</body>
+</html>
